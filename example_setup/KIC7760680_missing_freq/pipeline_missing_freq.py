@@ -6,17 +6,16 @@ if __name__ == '__main__':
     from foam.pipeline import pipeline_config
 
     pipeline_config.config = pipeline_config.PipelineConfig(star = 'KIC7760680',
-                                    observations='data_KIC7760680.tsv',
-                                    pattern_starting_pulsation = {'period': [1.158919], 'frequency': [None]},
+                                    observations='data_KIC7760680_missing_freq.tsv',
+                                    pattern_starting_pulsation = {'period': [0.90147, 0.981691, 1.094833, 1.46046], 'frequency': [None]},
                                     grid_parent_directory = None, #change to '/YOUR_PATH/MESA_grid' if you need to perform step 0
                                     grids = ['DO'], #Diffusive Overshooting grid
                                     rotation_gyre=0.4805,
-                                    N_periods = 36,
-                                    observable_seismic = ['dP'],
-                                    free_parameters = ['Z', 'M', 'logD', 'Xc'],
-                                    fixed_parameters = {'aov':0, 'fov':0},
+                                    N_periods = 32,
+                                    N_pattern_parts = 4,
+                                    pattern_methods = ['provided-pulsation', 'highest-frequency'], # exclude chisq_longest_sequence for faster runtime
+                                    observable_seismic = ['P'],
                                     nr_cpu = 4)
-
 
     # Run the pipeline
     pipeline_config.config.logger.info('step 0: Extracting grid')
