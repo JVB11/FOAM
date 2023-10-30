@@ -5,7 +5,7 @@ title: Installation
 # Installation
 
 ## Prerequisites
-FOAM is a python package which requires python 3.9 or newer (up until python 3.11), additionally the package uses <a href="https://python-poetry.org/docs/" target="_blank"> poetry</a> for dependency management. Follow their installation instructions to install poetry on your system as well.
+FOAM is a python package which requires python 3.9 (newer python versions seem to have an issue installing the specific 5.4.1 version of pyyaml), additionally the package uses <a href="https://python-poetry.org/docs/" target="_blank"> poetry</a> for dependency management. Follow their installation instructions to install poetry on your system as well.
 
 Some functionality requires <a href="https://gyre.readthedocs.io/en/stable/" target="_blank"> GYRE</a> to be installed as well. Please follow their <a href="https://gyre.readthedocs.io/en/stable/ref-guide/installation.html" target="_blank"> installation instructions</a>.
 
